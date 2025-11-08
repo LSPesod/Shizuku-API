@@ -49,10 +49,10 @@ jobs:
           path: ~/.ccache
           key: ${{ runner.os }}-ccache-cache-${{ github.sha }}
           restore-keys: ${{ runner.os }}-ccache-cache-
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-    - name: Accept Android SDK licenses
-      run: yes | sdkmanager --licenses
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses
       - name: Install ccache
         run: |
           sudo apt-get install -y ccache
